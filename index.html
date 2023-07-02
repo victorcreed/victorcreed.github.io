@@ -6,13 +6,14 @@
   </head>
   <body>
     Redirecting in 1000 ms
-    <span id="placeholder"></span>
+    Url: <span id="url"></span><br />
+    Placeholder <span id="placeholder"></span>
     <script>
       const urlSearchParams = new URLSearchParams(window.location.search);
 
       
       const params = Object.fromEntries(urlSearchParams.entries());
-      document.getElementById("placeholder").innerHTML = window.location.href
+      document.getElementById("url").innerHTML = window.location.href
       if(params["redirect_failure_login_url"]) {
         const collection = new Array()
         let keys = Object.keys(params)
