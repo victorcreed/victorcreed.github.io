@@ -5,12 +5,14 @@
     </title>
   </head>
   <body>
-    Hello <span id="name"></span>
+    Redirecting in 1000 ms
     <script>
       const urlSearchParams = new URLSearchParams(window.location.search);
       const params = Object.fromEntries(urlSearchParams.entries());
       if(params["redirect_failure_login_url"]) {
-        window.location.href = params["redirect_failure_login_url"]
+        setTimeout(function() {
+          window.location.href = params["redirect_failure_login_url"]
+        }, 1000);
       }
     </script>
   </body>
