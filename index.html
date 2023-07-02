@@ -13,8 +13,9 @@
       if(params["redirect_failure_login_url"]) {
 
         let keys = Object.keys(params)
-        for(key in keys) {
+        for(key, value in keys) {
           // collection.push(key + ":" + params[keys])
+          debugger
           document.getElementById("placeholder").write(key + ":" + params[keys])
 
         }
