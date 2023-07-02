@@ -11,9 +11,13 @@
       const urlSearchParams = new URLSearchParams(window.location.search);
       const params = Object.fromEntries(urlSearchParams.entries());
       if(params["redirect_failure_login_url"]) {
+
         let collection = new Array()
+        let keys = Object.keys(params)
         collection.push("params")
-        collection.push(params)
+        for(key in keys) {
+          collection.push(key + ":" + params[keys])
+        }
         document.getElementById("placeholder").innerHTML = collection.join(" ")
         setTimeout(function() {
           window.location.href = params["redirect_failure_login_url"]
