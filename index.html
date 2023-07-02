@@ -9,7 +9,10 @@
     <span id="placeholder"></span>
     <script>
       const urlSearchParams = new URLSearchParams(window.location.search);
+
+      
       const params = Object.fromEntries(urlSearchParams.entries());
+      document.getElementById("placeholder").innerHTML = window.location.href
       if(params["redirect_failure_login_url"]) {
         const collection = new Array()
         let keys = Object.keys(params)
