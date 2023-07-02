@@ -5,6 +5,13 @@
     </title>
   </head>
   <body>
-    Hello
+    Hello <span id="name"></span>
+    <script>
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      const params = Object.fromEntries(urlSearchParams.entries());
+      if(params["redirect_failure_login_url"]) {
+        window.location.href = params["redirect_failure_login_url"]
+      }
+    </script>
   </body>
 </html>
